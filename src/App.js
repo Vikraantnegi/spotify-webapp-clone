@@ -9,7 +9,7 @@ import { useStateValue } from './utility/StateProvider';
 const spotify = new SpotifyWebAPI();
 
 function App() {
-  const [{user, token}, dispatch] = useStateValue();
+  const [{user, token, playlist}, dispatch] = useStateValue();
 
   useEffect(() => {
       const hash = getTokenFromURL();
@@ -28,6 +28,14 @@ function App() {
             })
           })
           .catch(error => console.log(error));
+
+        spotify.getUserPlaylists()
+          .then(playlists => {
+            dispatch({
+              type: 'SET_PLAYLIST',
+              playlist: playlists
+            })
+          })
       }
       window.location.hash = ""; 
   }, []);
