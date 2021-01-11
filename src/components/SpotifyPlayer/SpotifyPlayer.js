@@ -1,20 +1,17 @@
 import React from 'react';
 import './SpotifyPlayer.css';
+import SideBar from './SideBar/SideBar';
+import Body from './Body/Body';
+import Footer from './Footer/Footer';
 
 function SpotifyPlayer() {
     return (
-        <div className="spotify-player">
-            <div className="player-body">
-                <div className="player-sidebar">
-
-                </div>
-                <div className="player-contentbody">
-
-                </div>
+        <div className="spotify-player flexColumn">
+            <div className="player-body flexRow">
+                <SideBar />
+                <Body />
             </div>
-            <div className="player-footer">
-
-            </div>
+            <Footer />
         </div>
     )
 }
