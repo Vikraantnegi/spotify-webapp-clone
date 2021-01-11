@@ -1,10 +1,10 @@
 import React from 'react'
 
-function SideBarOption({title, icon}) {
+function SideBarOption({title, Icon}) {
     return (
-        <div className="sidebar-option flexRow">
-            {icon && <icon className="sidebar-option-icon"></icon>}
-            {icon ? <h4>{title}</h4> : <p>{title}</p>}
+        <div className="sidebar-option flexRow flexAlignCenter">
+            {Icon && <Icon className="sidebar-option-icon"></Icon>}
+            {Icon ? <h4>{title}</h4> : <p>{title}</p>}
         </div>
     )
 }

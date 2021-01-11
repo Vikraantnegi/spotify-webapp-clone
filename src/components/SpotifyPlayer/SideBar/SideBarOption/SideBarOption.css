@@ -7,3 +7,10 @@
 .sidebar-option:hover{
     color: white;
 }
+.sidebar-option-icon{
+    padding: 0 10px;
+}
+.sidebar-option > p{
+    padding: 0 10px;
+    font-size: 14px;
+}
