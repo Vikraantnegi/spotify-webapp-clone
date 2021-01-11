@@ -17,7 +17,7 @@ function App() {
       if(accesstoken){
         dispatch({
           type: 'SET_TOKEN',
-          user: token,
+          token: accesstoken,
         })
         spotify.setAccessToken(token);
         spotify.getMe()

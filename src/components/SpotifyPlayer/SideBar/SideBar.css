@@ -2,8 +2,12 @@
     height: 100vh;
     flex: 0.2;
     color: white;
-    height: 100vh;
     background-color: #040404;
     padding: 0 10px;
     min-width: 230px;
+}
+.player-sidebar .sidebar-logo{
+    height: 60px;
+    padding: 10px;
+    margin-right: auto;
 }

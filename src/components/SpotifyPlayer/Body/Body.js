@@ -1,5 +1,6 @@
 import React from 'react';
 import './Body.css';
+import '../../../styles/HelperStyles.css'
 
 function Body() {
     return (
