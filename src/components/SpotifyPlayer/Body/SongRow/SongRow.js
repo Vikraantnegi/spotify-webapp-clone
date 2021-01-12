@@ -2,9 +2,9 @@ import React from 'react'
 import './SongRow.css';
 import '../../../../styles/HelperStyles.css';
 
-function SongRow({track, playSong}) {
+function SongRow({track, play}) {
     return (
-        <div className="song-row flexRow flexAlignCenter"  onClick={() => playSong(track.id)}>
+        <div className="song-row flexRow flexAlignCenter"  onClick={() => play(track.id)}>
             <img className="song-image" src={track.album.images[0].url} alt="song-img" />
             <div className="songrow-info">
                 <h1>{track.name}</h1>

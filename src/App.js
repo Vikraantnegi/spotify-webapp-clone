@@ -9,17 +9,17 @@ import { useStateValue } from './utility/StateProvider';
 const spotify = new SpotifyWebAPI();
 
 function App() {
-  const [{user, single_playlist, token, playlist}, dispatch] = useStateValue();
+  const [{ token}, dispatch] = useStateValue();
 
   useEffect(() => {
       const hash = getTokenFromURL();
       const accesstoken = hash.access_token;
       if(accesstoken){
+        spotify.setAccessToken(accesstoken);
         dispatch({
           type: 'SET_TOKEN',
           token: accesstoken,
         })
-        spotify.setAccessToken(token);
         spotify.getMe()
           .then(res => {
             dispatch({
@@ -27,7 +27,6 @@ function App() {
               user: res,
             })
           })
-          .catch(error => console.log(error));
 
         spotify.getUserPlaylists()
           .then(playlists => {
@@ -36,6 +35,25 @@ function App() {
               playlist: playlists
             })
           })
+        
+        spotify.getMyTopArtists().then((response) =>
+          dispatch({
+            type: "SET_TOP_ARTISTS",
+            top_artists: response,
+          })
+        );
+        
+          dispatch({
+            type: "SET_SPOTIFY",
+            spotify: spotify,
+          });
+
+        spotify.getPlaylist("37i9dQZEVXcJZyENOWUFo7").then((response) =>
+          dispatch({
+            type: "SET_DISCOVER_WEEKLY",
+            discover_weekly: response,
+          })
+        );
 
         spotify.getPlaylist('5UP5N95ux4S7ZQ7lz6TsQt')
           .then(resp => {
@@ -46,7 +64,7 @@ function App() {
           })
       }
       window.location.hash = ""; 
-  }, []);
+  }, [token, dispatch]);
 
   return (
     <div className="Spotify-app">
