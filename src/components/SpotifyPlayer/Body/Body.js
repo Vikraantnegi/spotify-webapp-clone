@@ -1,11 +1,12 @@
 import React from 'react';
 import './Body.css';
-import '../../../styles/HelperStyles.css'
+import '../../../styles/HelperStyles.css';
+import Header from './Header/Header';
 
-function Body() {
+function Body({spotify}) {
     return (
         <div className="player-contentbody">
-            
+            <Header spotify={spotify} />
         </div>
     )
 }
