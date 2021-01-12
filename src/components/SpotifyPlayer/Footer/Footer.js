@@ -1,10 +1,25 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import './Footer.css';
 import '../../../styles/HelperStyles.css';
 import { PlayCircleOutline, SkipPrevious, SkipNext, Shuffle, Repeat, PlaylistPlay, VolumeDown } from '@material-ui/icons';
 import { Grid, Slider } from '@material-ui/core';
+import { useStateValue } from "./StateProvider";
 
-function Footer() {
+function Footer({spotify}) {
+    const [{ token, item, playing }, dispatch] = useStateValue();
+    useEffect(() => {
+        spotify.getMyCurrentPlaybackState().then((song) => {
+          dispatch({
+            type: "SET_PLAYING",
+            playing: song.is_playing,
+          });
+    
+          dispatch({
+            type: "SET_ITEM",
+            item: song.item,
+          });
+        });
+      }, [spotify]);
     return (
         <div className="player-footer flexRow flexBetween">
             <div className="song-details flexRow flexAlignCenter flexBetween">
