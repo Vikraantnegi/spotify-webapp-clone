@@ -19,11 +19,29 @@
 }
 .volume-control{
     flex: 0.3;
-    columns: white;  
+    color: white;  
 }
 .album-cover{
     height: 60px;
     width: 60px;
     object-fit: contain;
     margin-right: 20px;
+}
+.player-control-toggle-icon{color: #1db954;}
+.player-control-toggle-icon:hover{color: #1ed15e;}
+.song-info > h4{
+    margin-bottom: 5px;
+}
+.song-info > p{
+    font-size: 12px;
+}
+.player-control-icon{
+    color: #b3b3b3;
+}
+.player-control-icon:hover{
+    color: white;
+}
+.player-control-toggle-icon:hover, .player-control-icon:hover{
+    transition: transform 0.2s ease-in-out;
+    transform: scale(1.2) !important;
 }

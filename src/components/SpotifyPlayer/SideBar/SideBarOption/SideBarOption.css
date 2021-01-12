@@ -1,5 +1,5 @@
 .sidebar-option{
-    color: grey;
+    color: #b3b3b3;
     height: 40px;
     cursor: pointer;
     transition: 200ms color ease-in;
@@ -8,7 +8,7 @@
     color: white;
 }
 .sidebar-option-icon{
-    padding: 0 10px;
+    margin: 0 10px;
 }
 .sidebar-option > p{
     padding: 0 10px;
