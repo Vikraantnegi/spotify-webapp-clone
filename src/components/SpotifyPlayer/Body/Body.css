@@ -5,6 +5,9 @@
     color: white;
     padding: 30px;
 }
+.player-contentbody::-webkit-scrollbar{
+    display: none;
+}
 .body-info{
     padding: 10px;
 }
@@ -22,4 +25,18 @@
 }
 .body-text p{
     font-size: 14px;
+}
+.list-icons .Mui-SvgIcon-root{
+    margin-right: 20px;
+}
+.body-shuffle{
+    font-size: 80px !important;
+    margin: 20px 20px 20px 50px; 
+}
+.body-shuffle:hover{
+    transition: 0.1s transform ease-in;
+    transform: scale(1.08);
+}
+.songs-list{
+    margin: 20px -30px;
 }

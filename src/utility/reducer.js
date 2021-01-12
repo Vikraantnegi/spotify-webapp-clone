@@ -1,10 +1,10 @@
 export const initialState = {
     user: null,
     playlist: [],
-    playing: false,
     item: null,
-    token: null,
-    single_playlist: [],
+    single_playlist: null,
+    top_artists: null,
+    playing: false,
 }
 
 const reducer = (state, action) => {

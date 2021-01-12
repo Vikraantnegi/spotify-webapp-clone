@@ -4,6 +4,7 @@ import '../../../styles/HelperStyles.css';
 import Header from './Header/Header';
 import { useStateValue } from '../../../utility/StateProvider';
 import { PlayCircleFilled, Favorite, MoreHoriz } from '@material-ui/icons';
+import SongRow from './SongRow/SongRow';
 
 function Body({spotify}) {
     const [{single_playlist}, dispatch] = useStateValue(); 
@@ -19,11 +20,14 @@ function Body({spotify}) {
                 </div>
             </div>
             <div className="songs_list">
-                <div className="list-icons">
+                <div className="list-icons flexRow flexAlignCenter">
                     <PlayCircleFilled className="body-shuffle" />
                     <Favorite fontSize="large" />
                     <MoreHoriz /> 
                 </div>
+                {single_playlist?.tracks.items.map(track => (
+                    <SongRow track={track.track} />
+                ))}
             </div>
         </div>
     )
