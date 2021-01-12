@@ -2,7 +2,28 @@
     position: fixed;
     bottom: 0;
     height: 65px;
-    width: 100%;
+    width: 96%;
     background-color: #282828;
     padding: 20px;
+}
+.song-details{
+    flex: 0.3;
+    color: white;
+    width: 300px;
+}
+.player-controls{
+    flex: 0.4;
+    padding: 0 100px;
+    color: white;
+    max-width: 300px;
+}
+.volume-control{
+    flex: 0.3;
+    columns: white;  
+}
+.album-cover{
+    height: 60px;
+    width: 60px;
+    object-fit: contain;
+    margin-right: 20px;
 }
