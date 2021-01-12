@@ -4,6 +4,7 @@ export const initialState = {
     playing: false,
     item: null,
     token: null,
+    single_playlist: [],
 }
 
 const reducer = (state, action) => {
@@ -23,6 +24,11 @@ const reducer = (state, action) => {
                 ...state,
                 playlist: action.playlist
             }
+        case 'SET_SINGLEPLAYLIST':
+            return{
+                ...state,
+                single_playlist: action.single_playlist
+            }            
         default:
             return state;
     }

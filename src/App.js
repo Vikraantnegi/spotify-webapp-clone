@@ -9,7 +9,7 @@ import { useStateValue } from './utility/StateProvider';
 const spotify = new SpotifyWebAPI();
 
 function App() {
-  const [{user, token, playlist}, dispatch] = useStateValue();
+  const [{user, single_playlist, token, playlist}, dispatch] = useStateValue();
 
   useEffect(() => {
       const hash = getTokenFromURL();
@@ -34,6 +34,14 @@ function App() {
             dispatch({
               type: 'SET_PLAYLIST',
               playlist: playlists
+            })
+          })
+
+        spotify.getPlaylist('5UP5N95ux4S7ZQ7lz6TsQt')
+          .then(resp => {
+            dispatch({
+              type: 'SET_SINGLEPLAYLIST',
+              single_playlist: resp
             })
           })
       }

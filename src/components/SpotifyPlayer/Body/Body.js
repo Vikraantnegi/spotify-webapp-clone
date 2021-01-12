@@ -2,17 +2,27 @@ import React from 'react';
 import './Body.css';
 import '../../../styles/HelperStyles.css';
 import Header from './Header/Header';
+import { useStateValue } from '../../../utility/StateProvider';
+import { PlayCircleFilled, Favorite, MoreHoriz } from '@material-ui/icons';
 
 function Body({spotify}) {
+    const [{single_playlist}, dispatch] = useStateValue(); 
     return (
         <div className="player-contentbody">
             <Header spotify={spotify} />
             <div className="body-info flexRow flexEnd">
-                <img className="album-card-image" src="" alt="album-card" />
+                <img className="album-card-image" src={single_playlist?.images[0]?.url} alt="album-card" />
                 <div className="body-text">
                     <strong>PLAYLIST</strong>
-                    <h2>Discover Weekly</h2>
-                    <p>Description</p>
+                    <h2>{single_playlist?.name}</h2>
+                    <p>{single_playlist?.description}</p>
+                </div>
+            </div>
+            <div className="songs_list">
+                <div className="list-icons">
+                    <PlayCircleFilled className="body-shuffle" />
+                    <Favorite fontSize="large" />
+                    <MoreHoriz /> 
                 </div>
             </div>
         </div>
