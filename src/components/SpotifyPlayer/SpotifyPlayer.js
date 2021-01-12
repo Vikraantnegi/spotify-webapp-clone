@@ -5,12 +5,12 @@ import Body from './Body/Body';
 import Footer from './Footer/Footer';
 import '../../styles/HelperStyles.css'
 
-function SpotifyPlayer() {
+function SpotifyPlayer({spotify}) {
     return (
         <div className="spotify-player flexColumn">
             <div className="player-body flexRow">
                 <SideBar />
-                <Body />
+                <Body spotify={spotify} />
             </div>
             <Footer />
         </div>

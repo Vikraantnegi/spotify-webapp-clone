@@ -29,10 +29,10 @@
 }
 .player-control-toggle-icon{color: #1db954;}
 .player-control-toggle-icon:hover{color: #1ed15e;}
-.song-info > h4{
+.song-info h4{
     margin-bottom: 5px;
 }
-.song-info > p{
+.song-info p{
     font-size: 12px;
 }
 .player-control-icon{
@@ -44,4 +44,7 @@
 .player-control-toggle-icon:hover, .player-control-icon:hover{
     transition: transform 0.2s ease-in-out;
     transform: scale(1.2) !important;
+}
+.volume-control * .MuiSlider-root{
+    color: green;
 }

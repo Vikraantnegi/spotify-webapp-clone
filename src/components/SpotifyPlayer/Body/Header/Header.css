@@ -1,0 +1,21 @@
+.contentbody-header{
+    margin-bottom: 30px;
+}
+.searchbody{
+    background-color: white;
+    color: #b3b3b3;
+    border-radius: 30px;
+    padding: 10px;
+    flex: 0.5;
+    min-width: 70px;
+}
+.contentbody-header input{
+    border: none;
+    width: 100%;
+}
+.user-info{
+
+}
+.user-info > h4{
+    margin-left: 10px;
+}
