@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 import './Footer.css';
 import '../../../styles/HelperStyles.css';
-import { PlayCircleOutline, SkipPrevious, SkipNext, Shuffle, Repeat, PlaylistPlay, VolumeDown } from '@material-ui/icons';
+import { PlayCircleOutline, SkipPrevious, SkipNext, Shuffle, Repeat, PlaylistPlay, VolumeDown, PauseCircleOutline } from '@material-ui/icons';
 import { Grid, Slider } from '@material-ui/core';
 import { useStateValue } from "./StateProvider";
 
@@ -83,9 +83,21 @@ function Footer({spotify}) {
             </div>
             <div className="player-controls flexRow flexAlignCenter flexBetween">
                 <Shuffle className="player-control-toggle-icon" />
-                <SkipPrevious className="player-control-icon" />
-                <PlayCircleOutline fontSize="large" className="player-control-icon" />
-                <SkipNext className="player-control-icon" />
+                <SkipPrevious onClick={() => Previous()} className="player-control-icon" />
+                { playing ? (
+                    <PauseCircleOutline
+                        onClick={() => PlayPause()}
+                        fontSize="large"
+                        className="player-control-icon"
+                    />
+                    ) : (
+                    <PlayCircleOutline
+                        onClick={() => PlayPause()}
+                        fontSize="large"
+                        className="player-control-icon"
+                    />
+                )}
+                <SkipNext onClick={() => Next()} className="player-control-icon" />
                 <Repeat className="player-control-toggle-icon" />
             </div>
             <div className="volume-control flexRow flexAlignCenter flexBetween">
