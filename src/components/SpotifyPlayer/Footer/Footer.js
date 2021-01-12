@@ -3,7 +3,7 @@ import './Footer.css';
 import '../../../styles/HelperStyles.css';
 import { PlayCircleOutline, SkipPrevious, SkipNext, Shuffle, Repeat, PlaylistPlay, VolumeDown, PauseCircleOutline } from '@material-ui/icons';
 import { Grid, Slider } from '@material-ui/core';
-import { useStateValue } from "./StateProvider";
+import { useStateValue } from "../../../utility/StateProvider";
 
 function Footer({spotify}) {
     const [{ token, item, playing }, dispatch] = useStateValue();
