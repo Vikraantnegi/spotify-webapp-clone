@@ -2,9 +2,7 @@ import React from 'react';
 import './SideBar.css';
 import '../../../styles/HelperStyles.css';
 import SidebarOption from './SideBarOption/SideBarOption';
-import Home from '@material-ui/icons/Home';
-import Search from '@material-ui/icons/Search';
-import LibraryMusic from '@material-ui/icons/LibraryMusic';
+import { Home, Search, LibraryMusic } from '@material-ui/icons';
 import { useStateValue } from '../../../utility/StateProvider';
 
 function SideBar() {
